@@ -18,10 +18,10 @@ pipeline {
 				}
 			}
 		}
-		stage('tests-on-stg') {
+		stage('tests-on-dev') {
 			steps{
 				script{
-					test('stg')
+					test('dev')
 				}
 			}
 		}
