@@ -66,12 +66,19 @@ def build(){
 
 def deploy(String environment){
 	echo "Now deploying Python microservice to ${environment} environment..."
+	
 	echo "Pulling the image from DockerHub..."
 	sh "docker pull atiskrievinstdl/python-greetings-app:latest"
+
 	echo "Stopping old containers..."
+	sh "docker compose stop greetings-app-${environment}"
+
+	echo "Removing old containers..."
 	sh "docker compose down greetings-app-${environment}"
+
 	echo "Starting new containers..."
 	sh "docker compose up -d greetings-app-${environment}"
+
 	echo "Finished deploying to ${environment}!"
 }
 
