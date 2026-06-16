@@ -71,7 +71,7 @@ def deploy(String environment){
 	echo "Stopping old containers..."
 	sh "docker compose down greetings-app-${environment}"
 	echo "Starting new containers..."
-	sh "docker compose up greetings-app-${environment}"
+	sh "docker compose up -d greetings-app-${environment}"
 	echo "Finished deploying to ${environment}!"
 }
 
