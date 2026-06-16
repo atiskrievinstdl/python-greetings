@@ -77,6 +77,6 @@ def deploy(String environment){
 
 def test(String environment){
 	echo "Testing Python microservice in ${environment} environment..."
-	sh "docker run --network=python-greetings-app_default --rm atiskrievinstdl/api-tests-final:latest run greetings greetings_${environment}"
+	sh "docker run --network=host --rm atiskrievinstdl/api-tests-final:latest run greetings greetings_${environment}"
 	echo "Tests for Python microservice are done."
 }
