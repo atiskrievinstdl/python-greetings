@@ -84,7 +84,7 @@ def deploy(String environment){
 
 def test(String environment){
 	echo "Pulling the image for testing container"
-	sh "docker pull atiskrievinstdkl/api-tests-final:latest"
+	sh "docker pull atiskrievinstdl/api-tests-final:latest"
 
 	echo "Testing Python microservice in ${environment} environment..."
 	sh "docker run --network=host --rm atiskrievinstdl/api-tests-final:latest run greetings greetings_${environment}"
