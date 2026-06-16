@@ -15,10 +15,10 @@ services:
      - 7002:3000
     networks:
       - python-greetings-app-compose-network
-  greetings-app-prd:
+  greetings-app-prod:
     build: .
     image: atiskrievinstdl/python-greetings-app
-    container_name: greetings-app-prd
+    container_name: greetings-app-prod
     ports: 
      - 7003:3000
     networks:
@@ -26,4 +26,4 @@ services:
 
 networks:
   python-greetings-app-compose-network:
-    name: python-greetings-app-compose-network
+    name: greeting-network
