@@ -6,7 +6,7 @@ services:
     ports: 
      - 7001:3000
     networks:
-      - host
+      - greetings-app_network
   greetings-app-stg:
     build: .
     image: atiskrievinstdl/python-greetings-app
@@ -14,7 +14,7 @@ services:
     ports: 
      - 7002:3000
     networks:
-      - host
+      - greetings-app_network
   greetings-app-prd:
     build: .
     image: atiskrievinstdl/python-greetings-app
@@ -22,4 +22,4 @@ services:
     ports: 
      - 7003:3000
     networks:
-      - host
+      - greetings-app_network
