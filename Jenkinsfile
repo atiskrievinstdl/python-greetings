@@ -39,17 +39,17 @@ pipeline {
 				}
 			}
 		}
-		stage('deploy-to-prd') {
+		stage('deploy-to-prod') {
 			steps{
 				script{
-					deploy('prd')
+					deploy('prod')
 				}
 			}
 		}
-		stage('tests-on-prd') {
+		stage('tests-on-prod') {
 			steps{
 				script{
-					test('prd')
+					test('prod')
 				}
 			}
 		}
